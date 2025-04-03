@@ -8,13 +8,13 @@ permissions:
   pull-requests: write
 
 jobs:
-  ##assign-author:
-    ##runs-on: ubuntu-latest
-    ##steps:
-      ##- uses: toshimaru/auto-author-assign@v2.1.1
-        ##with:
-         ##accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
-         ##projKey: default
+  assign-author:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: toshimaru/auto-author-assign@v2.1.1
+        with:
+         accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
+         projKey: default
 
   add-reviews:
     runs-on: ubuntu-latest
