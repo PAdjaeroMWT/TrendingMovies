@@ -22,5 +22,4 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v2.0.0
         with:
           configuration-path: '.github/auto-assign-pr-config.yml'
-          accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
-          projKey: default
+          repo-token: ${{ secrets.LD_ACCESS_TOKEN }}
