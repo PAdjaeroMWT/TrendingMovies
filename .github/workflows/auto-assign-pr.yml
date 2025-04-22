@@ -2,24 +2,16 @@ name: Auto Author Assign
 
 on:
   pull_request_target:
-    types: [ opened, reopened ]
+    types: [ opened, reopened, ready_for_review ]
 
 permissions:
   pull-requests: write
 
 jobs:
-  assign-author:
+  assign:
     runs-on: ubuntu-latest
     steps:
-      - uses: toshimaru/auto-author-assign@v2.1.1
+      - uses: hkusu/review-assign-action@v1
         with:
-         accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
-         projKey: default
-
-  add-reviews:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kentaro-m/auto-assign-action@v2.0.0
-        with:
-          repo-token: ${{ secrets.LD_ACCESS_TOKEN }}
-          configuration-path: '.github/auto-assign-pr-config.yml'
+          assignees: ${{ github.actor }}
+          reviewers: ericharlow-mwt, yrao_hoopla, padjaeromwt
