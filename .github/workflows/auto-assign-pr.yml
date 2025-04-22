@@ -15,4 +15,4 @@ jobs:
         with:
           assignees: ${{ github.actor }}
           reviewers: ericharlow-mwt, yrao_hoopla, padjaeromwt
-          github-token: ${{ secrets.LD_ACCESS_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
